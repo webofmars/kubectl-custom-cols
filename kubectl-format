@@ -1,0 +1,35 @@
+#!/bin/bash
+
+CONFIG="${HOME}/.kube/kubectl-format/templates"
+
+# Parsing args
+PARAMS=""
+while (( "$#" )); do
+  case "$1" in
+    -o|--output)
+      FARG=$2
+      shift 2
+      ;;
+    --) # end argument parsing
+      shift
+      break
+      ;;
+    *) # preserve positional arguments
+      PARAMS="$PARAMS $1"
+      shift
+      ;;
+  esac
+done
+
+# set positional arguments in their proper place
+eval set -- "$PARAMS"
+
+#echo "format : $FARG"
+#echo "args: $@"
+
+if [ ! -r "${CONFIG}/${FARG}.tpl" ]; then
+    echo "template not found";
+    exit 1
+else
+    exec kubectl -o custom-columns-file="${CONFIG}/${FARG}.tpl" get "$@"
+fi

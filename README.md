@@ -41,6 +41,6 @@ You can add you own templates in `$HOME/.kube/kube-format/templates` folder.
 
 ## Contributing
 
-Please feel free to send a PR or open issues ta the original repo : [](https://github.com/webofmars/kubectl-format)
+Please feel free to send a PR or open issues ta the original repo : https://github.com/webofmars/kubectl-format
 
 You can send your own templates to be included in the default package

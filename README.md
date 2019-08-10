@@ -14,7 +14,7 @@ ex:
 kubectl format -o qos-class pods -l app=nginx
 ```
 
-wil output:
+will output:
 
 ```sh
 NAME                   QoS-Class    STATUS

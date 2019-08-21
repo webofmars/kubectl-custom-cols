@@ -1,0 +1,30 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: custom-cols
+spec:
+  version: "v0.0.2"
+  platforms:
+  - selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+    uri: https://github.com/webofmars/kubectl-custom-cols/archive/v0.0.2.tar.gz
+    sha256: "5562b3e47952b0fa6a56d1577d3ac0921f7633011b2a0e6047e9f1de57cac2b5"
+    files:
+    - from: "./kubectl-custom-cols"
+      to: "."
+    - from: "./templates/*.tpl"
+      to: "templates"
+    bin: "./kubectl-custom-cols"
+  shortDescription: Easy use of custom columns output formating.
+  homepage: https://github.com/webofmars/kubectl-custom-cols
+  caveats: |
+    This plugin needs the following programs:
+    - env(1)
+    - bash
+    - realpath
+  description: |
+    This plugin allow you to pre-define some custom columns file templates that
+    you can then re-use with ease.
+    It's time saving to retrieve some ofen neeeeded infos like 
+    image names, containers names, versions, labels, etc...

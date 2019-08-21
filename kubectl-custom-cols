@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-CONFIG="${HOME}/.kube/kubectl-format/templates"
+SCRIPT_DIR="$( dirname "$( realpath "${BASH_SOURCE[0]}" )" )"
+CONFIG="${SCRIPT_DIR}/templates"
 
 # Parsing args
 PARAMS=""

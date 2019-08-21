@@ -33,7 +33,8 @@ web-back-0             Burstable    Running
 
 ### Via krew
 
-To be done ...
+Integration in progress ...
+Follow this PR : <https://github.com/kubernetes-sigs/krew-index/pull/210>
 
 ## Customize kubectl-custom-cols
 
@@ -41,6 +42,6 @@ You can add you own templates in `$HOME/.kube/kube-custom-cols/templates` folder
 
 ## Contributing
 
-Please feel free to send a PR or open issues ta the original repo : https://github.com/webofmars/kubectl-custom-cols
+Please feel free to send a PR or open issues ta the original repo : <https://github.com/webofmars/kubectl-custom-cols>
 
 You can send your own templates to be included in the default package

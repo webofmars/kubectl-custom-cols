@@ -1,12 +1,34 @@
 #!/usr/bin/env bash
 
+VERSION='v0.0.3'
 SCRIPT_DIR="$( dirname "$( realpath "${BASH_SOURCE[0]}" )" )"
 CONFIG="${SCRIPT_DIR}/templates"
 
+# functions
+
+function usage() {
+  echo "kubectl custom-cols (${VERSION})"
+  echo ''
+  echo 'A "kubectl get" replacement with customizable column presets.'
+  echo ''
+  echo "config dir is : ${SCRIPT_DIR}/templates"
+  echo "supported templates:"
+  for tpl in $(find "${SCRIPT_DIR}/templates" -name '*.tpl' -exec basename -s .tpl {} \;); do
+    echo "- $tpl"
+  done
+  exit 0
+}
+
 # Parsing args
 PARAMS=""
+[ $# -lt 1 ] && usage
+
 while (( "$#" )); do
   case "$1" in
+    -h|--help)
+      usage
+      break
+      ;;
     -o|--output)
       FARG=$2
       shift 2
@@ -25,9 +47,7 @@ done
 # set positional arguments in their proper place
 eval set -- "$PARAMS"
 
-#echo "format : $FARG"
-#echo "args: $@"
-
+# do the real stuff
 if [ ! -r "${CONFIG}/${FARG}.tpl" ]; then
     echo "template not found";
     exit 1

@@ -1,6 +1,8 @@
 # kubectl-custom-cols
 
-a kubectl plugin that help you customize output columns like a boss !
+A "kubectl get" replacement with customizable column presets.
+
+Master you kubectl output like a JSONpath pro :-)
 
 ## Using kubectl-custom-cols
 
@@ -28,8 +30,7 @@ web-back-0             Burstable    Running
 ### Manualy
 
 * dowload the latest release
-* copy `kubectl-custom-cols` script somewhere in your PATH
-* copy templates in `$HOME/.kube/kube-custom-cols/templates`
+* copy `kubectl-custom-cols` script and the `templates` folder together, somewhere in your PATH
 
 ### Via krew
 
@@ -38,7 +39,7 @@ Follow this PR : <https://github.com/kubernetes-sigs/krew-index/pull/210>
 
 ## Customize kubectl-custom-cols
 
-You can add you own templates in `$HOME/.kube/kube-custom-cols/templates` folder.
+You can add you own templates in the `templates` folder.
 
 ## Contributing
 

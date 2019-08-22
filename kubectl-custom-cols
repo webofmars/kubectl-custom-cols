@@ -11,10 +11,20 @@ function usage() {
   echo ''
   echo 'A "kubectl get" replacement with customizable column presets.'
   echo ''
+  echo 'Synopsis:'
+  echo ''
+  echo '  kubectl custom-cols -o|--output <template-name> <rest of kubectl get command>'
+  echo ''
+  echo 'Examples:'
+  echo ''
+  echo '  * kubectl custom-cols -o images pods -l app=nginx'
+  echo '  * kubectl custom-cols -o qos-class pods'
+  echo '  * kubectl custom-cols -o limits pod zookeeper'
+  echo ''
   echo "config dir is : ${SCRIPT_DIR}/templates"
   echo "supported templates:"
-  for tpl in $(find "${SCRIPT_DIR}/templates" -name '*.tpl' -exec basename -s .tpl {} \;); do
-    echo "- $tpl"
+  for tpl in "${SCRIPT_DIR}"/templates/*.tpl; do
+    echo "- $(basename -s .tpl $tpl)"
   done
   exit 0
 }

@@ -34,8 +34,9 @@ web-back-0             Burstable    Running
 
 ### Via krew
 
-Integration in progress ...
-Follow this PR : <https://github.com/kubernetes-sigs/krew-index/pull/210>
+If you already have the [krew](https://github.com/kubernetes-sigs/krew) kubectl plugin manager  installed, you can just issue the following command:
+
+`kubectl krew install custom-cols`
 
 ## Customize kubectl-custom-cols
 

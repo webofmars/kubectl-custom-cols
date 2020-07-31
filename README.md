@@ -27,9 +27,13 @@ web-back-0             Burstable    Running
 
 ## Install kubectl-custom-cols
 
-### Manualy
+### Prereqs
 
-* dowload the latest release
+If you're on Mac OS X, you may need to first run `brew install coreutils` to get the `realpath` function.
+
+### Manually
+
+* download the latest release
 * copy `kubectl-custom-cols` script and the `templates` folder together, somewhere in your PATH
 
 ### Via krew

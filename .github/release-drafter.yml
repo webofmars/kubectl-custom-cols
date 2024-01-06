@@ -1,0 +1,51 @@
+template: |
+  # What's Changed
+  $CHANGES
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...$RESOLVED_VERSION
+name-template: "Version $RESOLVED_VERSION"
+tag-template: "$RESOLVED_VERSION"
+
+categories:
+  - title: '🚀 Features'
+    labels:
+    - 'feature'
+    - 'feat'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'fix'
+      - 'bugfix'
+      - 'bug'
+  - title: '🧰 Maintenance'
+    label: 'chore'
+  - title: '📚 Documentation'
+    label: 'docs'
+  - title: '🧪 Tests'
+    label: 'test'
+  - title: '🏷️ Version Tags'
+    label: 'version'
+  - title: '🔖 Release Tags'
+    label: 'release'
+  - title: '🧩 Dependencies'
+    label: 'dependencies'
+  - title: '🔒 Security'
+    label: 'security'
+  - title: '🚨 Breaking Changes'
+    label: 'breaking'
+  - title: '🧹 Code Cleanup'
+    label: 'cleanup'
+  - title: '🔧 Config'
+    label: 'config'
+  - title: '📦 Packages'
+    label: 'package'
+  - title: '🔥 Removals'
+    label: 'removal'
+  - title: '🚧 Work In Progress'
+    label: 'wip'
+  - title: '🔀 Merges'
+    label: 'merge'
+  - title: '🎨 Style'
+    label: 'style'
+  - title: '🔊 Logging'
+    label: 'logging'
+  - title: '🔇 Silence'
+    label: 'silence'
